@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model that returns a single row."
+    columns:
+      - name: id
+        description: "The primary identifier for the row."
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model built from my_first_dbt_model."
+    columns:
+      - name: id
+        description: "The identifier inherited from my_first_dbt_model."
+        tests:
+          - not_null
